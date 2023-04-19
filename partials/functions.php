@@ -1,6 +1,5 @@
 <?php 
 
-    $passwordLength = $_GET['password-length'] ?? false;
     $specialChars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz0123456789!?#$%&-_@';
 
     function generateRandomPassword($lenght, $characters) {

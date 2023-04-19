@@ -1,7 +1,3 @@
-<?php  
-    include_once './partials/functions.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,21 +8,15 @@
 </head>
 <body>
 
-    <form action="index.php" method="GET">
+    <h3>Password lenght</h3>
+
+    <form action="redirect.php" method="GET">
 
         <label for="psw-lenght">Please insert the password lenght:</label><br>
         <input name="password-length" type="number" min="4" max="15" id="psw-lenght" placeholder="min 4, max 15">
         <button type="submit">Generate Password</button>
 
     </form>
-
-    <div>
-       <?php 
-            if ($passwordLength) {
-                echo '<strong>Your password is:</strong>' . generateRandomPassword($passwordLength, $specialChars); 
-            }
-        ?>
-    </div>
     
 </body>
 </html>
