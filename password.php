@@ -22,7 +22,7 @@
         Your password consts of <?php echo $_SESSION['passwordLength']?> characters.
         <div>
             <?php
-                echo '<strong>Password: </strong>' .  generateRandomPassword($_SESSION['passwordLength'], $specialChars); 
+                echo '<strong>Password: </strong>' .  generateRandomPassword($_SESSION['passwordLength']); 
             ?>
         </div>
 

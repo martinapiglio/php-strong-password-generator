@@ -1,17 +1,29 @@
 <?php 
 
-    $specialChars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz0123456789!?#$%&-_@';
+    function generateRandomPassword($lenght) {
 
-    function generateRandomPassword($lenght, $characters) {
+        $lowercaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
+        $uppercaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $numbers = '0123456789';
+        $specialChar = '!@#$%^&*()_-+=;:<>/?';
+
+        $characters = $lowercaseAlphabet . $uppercaseAlphabet . $numbers . $specialChar;
 
         $password = '';
 
-        for ($i = 0; $i <= $lenght - 1; $i++) {
+        $password .=  $lowercaseAlphabet[rand(0,strlen($lowercaseAlphabet)-1)];
+        $password .=  $uppercaseAlphabet[rand(0,strlen($uppercaseAlphabet)-1)];
+        $password .=  $numbers[rand(0,strlen($numbers)-1)];
+        $password .=  $specialChar[rand(0,strlen($specialChar)-1)];        
 
-            $randomPassword= $characters[random_int(0, strlen($characters) - 1)];
+        for ($i = 4; $i <= $lenght - 1; $i++) {
+
+            $randomPassword= $characters[rand(0, strlen($characters) - 1)];
             $password .= $randomPassword;
 
            };
+
+        $password = str_shuffle($password);
 
         return $password;
 
